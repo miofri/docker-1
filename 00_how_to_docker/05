@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# The -it flag tells docker that it should open an interactive container instance.
+# The --rm flag tells docker that the container should automatically be removed after we close docker.
+
+docker run -it --rm alpine

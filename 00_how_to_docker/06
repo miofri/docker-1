@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# docker run -it --rm debian
+# The build-essentials packages are meta-packages that are necessary for compiling software.
+
+apt-get update
+apt-get upgrade
+apt-get install git
+apt-get install build-essential
+
+# apt install nano
+# #include <stdio.h>
+# int main(){ printf("test!\n"); return (0); }
