@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Docker volumes are directories and files that exist on the host file system outside of the Docker container. These volumes are used to persist data and share data between Docker containers.
+
+docker volume create hatchery

@@ -5,8 +5,8 @@
 
 apt-get update
 apt-get upgrade
-apt-get install git
-apt-get install build-essential
+apt install git
+apt install build-essential # for gcc
 
 # apt install nano
 # #include <stdio.h>

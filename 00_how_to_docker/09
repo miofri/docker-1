@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# -d: detached mode (run in bg)
+# --restart on-failure: the container will get restarted if it stops because of an error.
+# --name the name of the container
+# -e set environmenatl variable, need to mention -e for each variable
+# -v or --volume: Consists of three fields, separated by colon characters (:). The fields must be in the correct order, and the meaning of each field is not immediately obvious.
+# In the case of named volumes, the first field is the name of the volume, and is unique on a given host machine. For anonymous volumes, the first field is omitted.
+# The second field is the path where the file or directory are mounted in the container.
+# The third field is optional, and is a comma-separated list of options, such as ro.
+
+docker run -d --restart=on-failure --name spawning-pool -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings -v hatchery:/var/lib/mysql mysql
+
+# use `docker exec spawning-pool env` to show the env. var.
+# docker ps for container id, and use `docker inspect -f '{{ .Mounts }}' 0e9c4fd330f7` (container id) to make sure that hatchery is mounted.
