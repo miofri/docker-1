@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# get container id
+# docker container ls | grep 'spawning-pool' | awk '{print $1}'
+docker container --follow spawning-pool
