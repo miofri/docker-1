@@ -1,2 +1,5 @@
 #!/bin/bash
 
+# A replicated service is a Docker Swarm service that has a specified number of replicas running. These replicas consist of multiple instances of the specified Docker container.
+
+docker service create --name engineering-bay --network overmind --replicas 2 -e OC_USERNAME=root -e OC_PASSWD=Kerrigan 42school/engineering-bay
