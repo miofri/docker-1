@@ -1,0 +1,6 @@
+#!/bin/bash
+# https://docs.docker.com/engine/reference/commandline/service_ls/
+
+docker service ls
+
+# The REPLICAS column shows both the actual and desired number of tasks for the service. If the service is in replicated-job or global-job, it will additionally show the completion status of the job as completed tasks over total tasks the job will execute.

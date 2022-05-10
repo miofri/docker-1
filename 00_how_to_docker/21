@@ -1,1 +1,8 @@
 #!/bin/bash
+# https://docs.docker.com/engine/swarm/services/
+
+docker service create --name orbital-command --network overmind -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=Kerrigan rabbitmq
+
+# The docker run command creates and starts a container on the local docker host.
+
+# A docker "service" is one or more containers with the same configuration running under docker's swarm mode. It's similar to docker run in that you spin up a container. The difference is that you now have orchestration. That orchestration restarts your container if it stops, finds the appropriate node to run the container on based on your constraints, scale your service up or down, allows you to use the mesh networking and a VIP to discover your service, and perform rolling updates to minimize the risk of an outage during a change to your running application.
