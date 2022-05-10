@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# The overlay network driver creates a distributed network among multiple Docker daemon hosts. This network sits on top of (overlays) the host-specific networks, allowing containers connected to it (including swarm service containers) to communicate securely when encryption is enabled. Docker transparently handles routing of each packet to and from the correct Docker daemon host and the correct destination container.
+
+# check with docker network ls
+
+docker network create -d overlay overmind
