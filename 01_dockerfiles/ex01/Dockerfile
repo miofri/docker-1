@@ -24,6 +24,7 @@ ENTRYPOINT [ "./ts3server" ]
 
 # docker build --no-cache -t tstest .
 # docker run -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 tstest
+# connect to the server via the IP address of the WSL, not the container's!
 # detached. publish container's ports to host. interactive mode (accepts stdin from terminal). allocate a pesudo terminal that reads stdin/stdout from user.
 
 #  Server Query Admin Account created
