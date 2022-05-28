@@ -14,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt install apt-utils -y && apt install iproute2 -y && apt install net-tools -y && apt install curl tar bzip2 -y
 
 WORKDIR /usr/local/etc
-
+# -xf -> extract file named ...
 RUN curl -O https://files.teamspeak-services.com/releases/server/3.13.6/teamspeak3-server_linux_amd64-3.13.6.tar.bz2
 RUN tar -xf teamspeak3-server_linux_amd64-3.13.6.tar.bz2
 
