@@ -29,9 +29,11 @@ RUN echo "external_url \"https://localhost\"" >> /etc/gitlab/gitlab.rb \
 
 EXPOSE 80 443 22
 
-RUN apt-add-repository ppa:git-core/ppa \
+RUN apt-get update && apt install software-properties-common -y && apt update
+
+RUN add-apt-repository ppa:git-core/ppa \
 && apt-get update \
-&& apt-get install git
+&& apt-get install git -y
 
 #bypassing self-signed cert error
 RUN git config --global http.sslverify false
@@ -40,6 +42,8 @@ ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) \
 && service ssh start \
 && gitlab-ctl reconfigure \
 && gitlab-ctl tail
+
+# docker run --rm -it -p 8443:443 -p 8022:22 --privileged gitlab
 
 # When the container starts, it will run tail and starts logging. Open another container and exec into it when needed.
 # go to localhost:8443 and login with root. passwd is in /etc/gitlab/initial_root_password

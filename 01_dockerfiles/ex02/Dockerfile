@@ -19,8 +19,11 @@ ONBUILD RUN bundle install
 ONBUILD RUN bundle update --bundler
 
 # ONBUILD RUN npm install --global yarn
+# rake is ruby's task runner.
 ONBUILD RUN rake db:create
 ONBUILD RUN rake db:migrate
+
+# Delete Gemfile.lock and make sure ruby version is ruby '3.0.4' and 'rails', '~> 7.0.0'
 
 # docker build -t ft-rails:on-build .
 
