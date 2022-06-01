@@ -43,6 +43,7 @@ ENTRYPOINT (/opt/gitlab/embedded/bin/runsvdir-start &) \
 && gitlab-ctl reconfigure \
 && gitlab-ctl tail
 
+# docker build -t gitlab .
 # docker run --rm -it -p 8443:443 -p 8022:22 --privileged gitlab
 
 # When the container starts, it will run tail and starts logging. Open another container and exec into it when needed.
