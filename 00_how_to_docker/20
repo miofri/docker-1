@@ -5,3 +5,6 @@
 # check with docker network ls
 
 docker network create -d overlay overmind
+
+# Overlay networks connect multiple Docker daemons together and enable swarm services to communicate with each other. You can also use overlay networks to facilitate communication between a swarm service and a standalone container, or between two standalone containers on different Docker daemons. This strategy removes the need to do OS-level routing between these containers.
+# Bridge networks are usually used when your applications run in standalone containers that need to communicate.

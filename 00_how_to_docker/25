@@ -1,7 +1,6 @@
 #!/bin/bash
 
-docker service create --name marines --network overmind --replicas 2 -e OC_USER
-NAME=root -e OC_PASSWD=Kerrigan 42school/marine-squad
+docker service create --name marines --network overmind --replicas 2 -e OC_USERNAME=root -e OC_PASSWD=Kerrigan 42school/marine-squad
 
 docker service ps marines
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
 # lets docker join our swarm
+# use docker swarm join-token worker
 
-docker swarm join --token SWMTKN-1-5ft4u8x5z8lme53oxctjajjm91vvymtx3cx64tq17axsc1dz3t-5fqt98o8mmk26xuc9pmeun4h5 192.168.240.169:2377
+docker swarm join --token <token> <WSL2 IP address>:2377
+
+# 172.28.252.159

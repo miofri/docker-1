@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker swarm init --advertise-addr 192.168.240.169
+docker swarm init
 
 # To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.

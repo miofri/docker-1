@@ -1,12 +1,13 @@
 #!/bin/bash
 
-#installs a container
+# https://flask.palletsprojects.com/en/2.1.x/quickstart/
+# installs a container
 docker run -dit --name Abathur -p 3000:3000 -v /home/selvi/docker-py:/root python:2-slim
 
 docker exec Abathur pip install Flask
 
 # create a file called app.py
-echo 'from flask import flask\napp = Flask(__name__)\n@app.route('/')\n\tdef hello_world():\nreturn"<h1>Hello World</h1>"' > /home/selvi/docker-py/app.py
+echo -e 'from flask import Flask\napp = Flask(__name__)\n@app.route("/")\ndef hello_world():\n\treturn"<h1>Hello World</h1>"' > /home/selvi/docker-py/app.py
 
 # 1st we need to tell the app to work by setting FLASK_APP env. variable to our app.
 # flask run - runs the application on a local development server.
